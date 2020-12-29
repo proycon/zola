@@ -17,13 +17,13 @@
       {%- endif -%}
     "/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>{{ last_updated | date(format="%+") }}</updated>
+	<updated>{{ last_updated | date(format="%F") }}</updated>
 	<id>{{ feed_url | safe }}</id>
 	{%- for page in pages %}
 	<entry xml:lang="{{ page.lang }}">
 		<title>{{ page.title }}</title>
-		<published>{{ page.date | date(format="%+") }}</published>
-		<updated>{{ page.updated | default(value=page.date) | date(format="%+") }}</updated>
+		<published>{{ page.date | date(format="%F") }}</published>
+		<updated>{{ page.updated | default(value=page.date) | date(format="%F") }}</updated>
 		<link href="{{ page.permalink | safe }}" type="text/html"/>
 		<id>{{ page.permalink | safe }}</id>
 		<content type="html">{{ page.content }}</content>
